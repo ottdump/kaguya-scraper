@@ -74,6 +74,7 @@ const gogoExtractor = async (id: string) => {
       serverUrl = new URL('https:' + server);
     } else serverUrl = new URL(`${GOLOAD_STREAM_URL}?id=${id}`);
 
+    serverUrl.href = serverUrl.href.replace('gogohd.pro', 'gogohd.net'); 
     const goGoServerPage = await axios.get(serverUrl.href, {
       headers: { 'User-Agent': USER_AGENT },
     });
